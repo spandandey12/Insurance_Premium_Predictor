@@ -70,9 +70,9 @@ def accident_factor(num_accident):
 
 # Total combined risks
 def combined_factors(age, annual_km, car_age, year_driving, num_accident):
-"""
-Combining all individual risk multipliers into a single risk score. This will be used inside CarInsurance class.
-"""
+    """
+    Combining all individual risk multipliers into a single risk score. This will be used inside CarInsurance class.
+    """
     a = age_factor(age)
     mil = mileage_factor(annual_km)
     c = car_age_factor(car_age)
