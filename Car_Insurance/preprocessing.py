@@ -17,7 +17,7 @@ Age_Multipliers = {
     63: 0.986329, 64: 0.988128, 65: 0.988006
 }
 def age_factor(age):
-    return Age_Multipliers.get(age,1.0)
+    return Age_Multipliers.get(age, 1.0)
 
 # Real Mileage Multiplers
 Annual_Mileage_Multipliers = {
@@ -25,8 +25,8 @@ Annual_Mileage_Multipliers = {
     16: 0.999642, 17: 1.000345, 18: 1.000652, 19: 1.000291, 20: 0.999599,
     21: 0.999225, 22: 0.998437, 23: 1.000596, 24: 1.000745, 25: 1.001651
 }
-def mileage_factor(annul_km):
-    key = int(round(annul_km/1000))
+def mileage_factor(annual_km):
+    key = int(round(annual_km / 1000))
     return Annual_Mileage_Multipliers.get(key, 1.0)
 
 # Car Multiplier multiplier
@@ -42,7 +42,7 @@ Car_Age_Multiplier = {
     32: 1.003001, 33: 1.003452, 34: 1.006315, 35: 1.005208
 }
 def car_age_factor(car_age):
-    return Car_Age_Multiplier.get(car_age,1.0)
+    return Car_Age_Multiplier.get(car_age, 1.0)
 
 # Experience Multipler multiplier
 Experience_Multiplier = {
@@ -65,11 +65,11 @@ Accident_Multiplier = {
     2: 0.997017, 3: 1.001607,
     4: 1.003906, 5: 1.007272
 }
-def accident_factor(num_accident):
-    return Accident_Multiplier.get(num_accident,1.0)
+def accident_factor(num_accidents):
+    return Accident_Multiplier.get(num_accidents, 1.0)
 
 # Total combined risks
-def combined_factors(age, annual_km, car_age, year_driving, num_accident):
+def combined_factors(age, annual_km, car_age, year_driving, num_accidents):
     """
     Combining all individual risk multipliers into a single risk score. This will be used inside CarInsurance class.
     """
@@ -77,5 +77,5 @@ def combined_factors(age, annual_km, car_age, year_driving, num_accident):
     mil = mileage_factor(annual_km)
     c = car_age_factor(car_age)
     exp = experience_factor(year_driving)
-    aci = accident_factor(num_accident)
+    aci = accident_factor(num_accidents)
     return a * mil * c * exp * aci

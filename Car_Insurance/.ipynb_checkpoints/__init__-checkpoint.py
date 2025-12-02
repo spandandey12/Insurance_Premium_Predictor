@@ -1,3 +1,8 @@
+"""
+Car Insurance Sub-Package
+Provides functionality to compute car insurance risk factors and final premium estimates.
+"""
+
 from .training import CarInsurance, result
 from .preprocessing import (
     age_factor,
@@ -7,3 +12,4 @@ from .preprocessing import (
     accident_factor,
     combined_factors
 )
+
