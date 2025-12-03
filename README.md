@@ -14,6 +14,6 @@ To run the demo use - `streamlit run App.py`
 
 Sample Outputs 
 
-![Car Insurance](Output/Car Insurance.png)
-![Home Insurance](Output/Home Insurance.png)
-![Health Insurance](Output/Health Insurance.png)
+![Car Insurance](Output/Car_Insurance.png)
+![Home Insurance](Output/Home_Insurance.png)
+![Health Insurance](Output/Health_Insurance.png)
